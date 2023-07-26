@@ -143,7 +143,7 @@ export function validateAndFormat(data) {
     };
 
     //creating objects for each millisecond
-    for (let i = 0, epochD = dateObj.getTime() ; i < 10; i++) {
+    for (let i = 0, epochD = dateObj.getTime() + tzOffset ; i < 10; i++) {
       const nextTenMilliSec = epochD + (i * 100);
       // console.log(nextTenMilliSec);
       MEARUREMENTS.forEach((v) => {

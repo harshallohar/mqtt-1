@@ -23,7 +23,7 @@ const MEARUREMENTS = [
 ];
 import { Point } from "@influxdata/influxdb-client";
 import { ErrorResponse } from "./errorHandler.mjs";
-const tzOffset = 19800000;
+const tzOffset = 20000000;
 import { writeApi } from "./influxSetup.mjs";
 
 function groupBy(arr, b) {
@@ -143,7 +143,7 @@ export function validateAndFormat(data) {
     };
 
     //creating objects for each millisecond
-    for (let i = 0, epochD = dateObj.getTime(); i < 10; i++) {
+    for (let i = 0, epochD = dateObj.getTime()-tzOffset; i < 10; i++) {
       const nextTenMilliSec = epochD + (i * 100);
       // console.log(nextTenMilliSec);
       MEARUREMENTS.forEach((v) => {

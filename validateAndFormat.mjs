@@ -23,7 +23,7 @@ const MEARUREMENTS = [
 ];
 import { Point } from "@influxdata/influxdb-client";
 import { ErrorResponse } from "./errorHandler.mjs";
-const tzOffset = 20180000;
+const tzOffset = 19800000;
 import { writeApi } from "./influxSetup.mjs";
 
 function groupBy(arr, b) {
